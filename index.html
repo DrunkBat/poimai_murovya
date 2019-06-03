@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title></title>
+  </head>
+  <body style="background-image: url(bg.jpg);">
+    <div class="col-12 " style="height: 100px">
+      <div class="row">
+        <h1 class="ml-2">Очки:<span class="score">0</span></h1>
+      </div>
+    </div>
+   <script type="text/javascript">
+    let score = 0;
+    let func = function(arg) { //функция с аргументом
+      let rand = Math.random()*arg;
+      let round = Math.round(rand);
+      return round;
+    }
+
+    let interv = function(){
+      let img = document.createElement('img');
+      img.style.marginLeft = func(1350) + "px";
+      img.style.marginTop = func(500) + "px"; 
+      document.body.appendChild(img);
+      img.src = "img.svg"
+      img.style.height = "100px";
+      img.style.width = "100px";
+      img.style.position = "absolute";
+      img.onclick = function(){
+        img.style.display = "none"
+        score = score + 1
+        document.querySelector(".score").innerHTML = score
+      }
+      imgs = imgs + 1
+      document.querySelector(".limit").innerHTML = imgs
+      if ( limit  ==  0 ) {//условие
+      alert("проиграл")
+      clearInterval(createbugint);
+      clearInterval(createappleint);
+    } 
+    setInterval(interv,1000) 
+    setTimeout(proverka,1000) 
+   </script>
+  </body>
+</html>
